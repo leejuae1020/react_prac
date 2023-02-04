@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>리액트입문-주애</title>
+</head>
+
+<body>
+    <form onsubmit="clickSub()">
+        <div>
+            <label for="first-name"><b>First-name :</b> </label><br />
+            <input type="text" id="first-name" autofocus placeholder="성 을 입력하세요" required />
+            <br />
+
+            <label for="last-name"><b>Last-name :</b></label><br />
+            <input type="text" id="last-name" placeholder="이름을 입력하세요" required /><br />
+
+            <label for="mail"><b>Email :</b> </label><br />
+            <input type="text" id="mail" placeholder="메일을 입력하세요" required /><br />
+        </div>
+
+        <div>
+            <label for="gender"><b>Gender :</b>
+                <input type="radio" name="gender" value="male" /><b>Male</b>
+                <input type="radio" name="gender" value="female" /><b>Female</b>
+            </label>
+        </div>
+
+        <div>
+            <label for="favorite"><b>Favorite :</b></label>
+            <input type="checkbox" value="html" /><b>HTML</b>
+            <input type="checkbox" value="JAVA" /><b>JAVA</b>
+            <input type="checkbox" value="javascript" /><b>JavaScript</b>
+        </div>
+
+        <div>
+            <label for="browser"><b>Browser :</b></label>
+            <select id="browser">
+                <!-- 첫번째 항목이 늘 표시되도록 해주는 selected 속성 -->
+                <option value="chrome" selected>크롬</option>
+                <option value="edge">엣지</option>
+                <option value="whale">네이버 웨일</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="birthday"><b>Birthday :</b></label>
+            <input type="date" />
+        </div>
+        <input type="submit" value="제출">
+    </form>
+
+    <script>
+        const clickSub = () => {
+            alert('제출임둥')
+        }
+    </script>
+
+</body>
+
+</html>
