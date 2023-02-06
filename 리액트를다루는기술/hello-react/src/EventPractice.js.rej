@@ -1,0 +1,113 @@
+diff a/리액트를다루는기술/hello-react/src/EventPractice.js b/리액트를다루는기술/hello-react/src/EventPractice.js	(rejected hunks)
+@@ -1,73 +1,46 @@
+-import React, { Component } from 'react';
+-
+-class EventPractice extends Component {
+-  state = {
+-    username: '',
+-    message: '',
+-  };
+-
+-  //   constructor(props) {
+-  //     super(props);
+-  //     this.handleChange = this.handleChange.bind(this);
+-  //     this.handleClick = this.handleClick.bind(this);
+-  //   }
+-
+-  //   handleChange(e) {
+-  //     this.setState({
+-  //       message: e.target.value,
+-  //     });
+-  //   }
+-
+-  handleChange = (e) => {
+-    this.setState({
+-      [e.target.name]: e.target.value,
+-    });
+-  };
+-
+-  //   handleClick() {
+-  //     alert(this.state.message);
+-  //     this.setState({
+-  //       message: '',
+-  //     });
+-  //   }
+-
+-  handleClick = () => {
+-    alert(this.state.username + ':' + this.state.message);
+-    this.setState({
+-      username: '',
+-      message: '',
+-    });
++import { useState } from 'react';
++
++const EventPractice = () => {
++  const [username, setUsername] = useState(''); // 초기값
++  const [message, setMessage] = useState(''); //초기값
++  const onChangeUsername = (e) => setUsername(e.target.value);
++  const onChangeMessage = (e) => setMessage(e.target.value);
++  const onClick = () => {
++    //클릭함수
++    alert(username + ':' + message); // 알림창 띄우기
++    setUsername(''); //알림창띄운 후 다시 초기화 하기
++    setMessage(''); //알림창띄운 후 다시 초기화 하기
+   };
+ 
+-  handleKeyPress = (e) => {
++  const onKeyPress = (e) => {
+     if (e.key === 'Enter') {
+-      this.handleClick();
++      onClick(); // 엔터키가 눌리면 onClick 함수 실행가기
+     }
+   };
+ 
+-  render() {
+-    return (
+-      <div>
+-        <h1>이벤트 연습</h1>
+-        <input
+-          type="text"
+-          name="username"
+-          placeholder="사용자명"
+-          value={this.state.username}
+-          onChange={this.handleChange}
+-        ></input>
+-        <input
+-          type="text"
+-          name="message"
+-          placeholder="아무거나 입력하세요"
+-          value={this.state.message}
+-          onChange={this.handleChange}
+-          onKeyPress={this.handleKeyPress}
+-        ></input>
+-        <button onClick={this.handleClick}>확인</button>
+-      </div>
+-    );
+-  }
+-}
++  return (
++    <div>
++      <h1>이벤트 연습</h1>
++      <input
++        type="text"
++        name="username"
++        placeholder="나메에와!!!!"
++        value={username}
++        onChange={onChangeUsername}
++      ></input>
++
++      <input
++        type="text"
++        name="message"
++        placeholder="왜들그리다운 아무거나 입력해"
++        value={message}
++        onChange={onChangeMessage} // {} 중괄호 안의 것들은 위에서 const로 선언한것들임
++        onKeyPress={onKeyPress} //삭제된 문법이라서 취소선 가있음.
++      ></input>
++
++      <button onClick={onClick}>확인</button>
++    </div>
++  );
++};
+ 
+ export default EventPractice;
