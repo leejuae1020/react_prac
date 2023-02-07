@@ -1,0 +1,22 @@
+.container {
+  margin: 10px;
+  border: none;
+  border-radius: 20px;
+  background-color: #f7e5e5;
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+  align-items: center;
+  padding: 10px;
+  font-size: 22px;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+}
+
+.container > div {
+  margin: 40px;
+  padding: 10px;
+  border: none;
+  border-radius: 30px;
+  background-color: rgb(255, 255, 255);
+}
