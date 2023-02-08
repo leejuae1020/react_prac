@@ -1,0 +1,15 @@
+.list_container {
+  padding: 0 24px;
+}
+
+h1 {
+  display: block;
+  /* font-size: 1.5em; */
+  font-weight: bold;
+}
+
+.list_wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}

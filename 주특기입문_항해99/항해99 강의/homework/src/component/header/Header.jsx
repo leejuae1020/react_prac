@@ -8,7 +8,6 @@ function Header() {
         <div>My Todo List</div>
         <div>React</div>
       </header>
-      {/* {props.children} */}
     </>
   );
 }

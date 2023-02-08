@@ -1,0 +1,6 @@
+.layout {
+  margin: 0 auto; /* 레이아웃 가운데 정렬 */
+  max-width: 1200px;
+  min-width: 800px;
+  /* background-image: url("https://i.pinimg.com/564x/bf/ce/f9/bfcef965220a4e3a8306399765550f40.jpg"); */
+}

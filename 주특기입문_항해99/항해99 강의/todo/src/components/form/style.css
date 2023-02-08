@@ -1,5 +1,6 @@
-.form-container {
-  margin: 10px;
+.form_container {
+  margin: 5px 10px;
+
   border: none;
   border-radius: 20px;
   background-color: #e3e0e0;
@@ -13,7 +14,7 @@
   color: rgb(0, 0, 0);
 }
 
-.input-container {
+.input_container {
   width: 48%;
   display: flex;
   justify-content: space-around;
@@ -45,7 +46,7 @@ input {
   cursor: pointer;
 }
 
-.form-container > button:hover {
+.form_container > button:hover {
   color: rgb(0, 0, 0);
   background-color: white;
 }
