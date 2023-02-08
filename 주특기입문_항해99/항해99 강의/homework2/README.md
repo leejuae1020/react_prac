@@ -14,7 +14,7 @@ component 및 props의 개념들을 이론적으로 이해하였으나
 
 ## app.js
 
--pages 폴더 내 TodoList.js와 연결 됨
+- pages 폴더 내 TodoList.js와 연결 됨
 
 ## pages / TodoList.js
 
@@ -22,13 +22,13 @@ component 및 props의 개념들을 이론적으로 이해하였으나
 
 ## components
 
--Layout : Todo List 전체 영역
+- Layout : Todo List 전체 영역
 
--Header : 헤더
+- Header : 헤더
 
--Form : insert form component
+- Form : insert form component
 
--List : 추가한 카드와 완료된 카드 나뉘어진 공간
+- List : 추가한 카드와 완료된 카드 나뉘어진 공간
 Todo와 연결 됨
 
--Todo : 카드 삭제, 취소, 완료 기능구현 공간
+- Todo : 카드 삭제, 취소, 완료 기능구현 공간
