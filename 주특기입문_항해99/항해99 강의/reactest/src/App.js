@@ -8,7 +8,18 @@ function App() {
       id: 1,
       title: "react를 배워봅시다",
     },
+    { id: 2, title: "원장님 재밌어요" },
+    { id: 3, title: "매니저님들 짱" },
   ]);
+
+  const addBtnHandler = () => {
+    const newTodos = {
+      id: todos.length + 1,
+      title: title,
+    };
+
+    setTodos([...todos, newTodos]);
+  };
 
   return (
     <div>
@@ -20,13 +31,7 @@ function App() {
             setTitle(event.target.value);
           }}
         />
-        <button
-          onClick={() => {
-            setTodos([...todos, { id: todos.length + 1, title: title }]);
-          }}
-        >
-          추가하기
-        </button>
+        <button onClick={addBtnHandler}>추가하기</button>
       </div>
 
       <h1>Todo List</h1>
