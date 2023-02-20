@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import "./App.css";
+import api from "./axios/api";
 
 function App() {
   //3. 아래서 받아온 data를 컴포넌트안에서 데이터로서, state로 쓰기위해서 state를 만들어준다
@@ -17,10 +17,12 @@ function App() {
   const [contents, setContents] = useState("");
 
   //1. axios 통신 요청
-
+  //  GET요청 (조회함수)
   const fetchTodos = async () => {
-    //2 . GET요청 (조회함수)// async {} 블록 안에서 awit를 만나면 response{data}를 할당 받을때까지 기다렸다가 밑에줄이 실행된다.
-    const { data } = await axios.get("http://localhost:4000/todos");
+    // async {} 블록 안에서 awit를 만나면 response{data}를 할당 받을때까지 기다렸다가 밑에줄이 실행된다.
+    // const { data } = await axios.get("http://localhost:4000/todos");
+    const { data } = await api.get("/todos");
+
     console.log("너의 data는..", data); //db.json에있는 의미있는 data들이 출력 됨
 
     //4. todo에다가 data를 set해주어야 함. 그래야지만 이 컴포넌트안에서 state에 DB가 들어감
@@ -29,7 +31,8 @@ function App() {
 
   //11. POST요청 (추가함수)
   const onSubmitHandler = async () => {
-    axios.post("http://localhost:4000/todos", inputValue);
+    // axios.post("http://localhost:4000/todos", inputValue);
+    api.post("/todos", inputValue);
 
     //실시간으로 화면에서 추가되게 해주기
     // setTodos([...todos, inputValue]);
@@ -40,7 +43,8 @@ function App() {
   //12. DELETE 요청 (삭제함수)
   const onDeletBtnclickHandler = async (id) => {
     //인자로 id를 넘겨줬으니 다시 id로 받고 4000번의 todos에 있는걸 삭제할건데 id번째꺼를 삭제할것이다. `백틱` 사용
-    axios.delete(`http://localhost:4000/todos/${id}`);
+    // axios.delete(`http://localhost:4000/todos/${id}`);
+    api.delete(`/todos/${id}`);
 
     //실시간으로 화면에서 삭제되게 해주기
     // item의 id가 아닌것만 뽑아내줘!
@@ -55,7 +59,11 @@ function App() {
   const onUpdataBtnClickHandler = async () => {
     //어떻게 바꿔줄건지 -> {}객체 형태이기때문에 {}형태로 넣어준다.
     // targetId를 가지고 title을 바꿔줄거기때문에 위에있는 contents 로 바꾸어줄 것 (title : contents)
-    axios.patch(`http://localhost:4000/todos/${targetId}`, {
+    // axios.patch(`http://localhost:4000/todos/${targetId}`, {
+    //   title: contents,
+    // });
+
+    api.patch(`/todos/${targetId}`, {
       title: contents,
     });
 
